@@ -31,3 +31,16 @@ export function addToCart(productId) {
        })
   }
 }
+
+
+export function deleteFromCart(productId) {
+  const newCart = [];
+
+  cart.forEach((cartItem) =>{
+    if (cartItem.productId !== productId) {
+      newCart.push(cartItem);
+    }
+  })
+
+  cart = newCart;
+}
